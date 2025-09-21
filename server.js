@@ -65,6 +65,21 @@ app.get('/', (req, res) => {
     }
 });
 
+app.get('/greeting', (req, res) => { //trying out the tab completion
+   if (req.session.userId) {
+        db.get('SELECT username FROM users WHERE id = ?', [req.session.userId], (err, user) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Database error');
+                return;
+            }
+            res.end('<h1>Hello ' + user.username + '</h1>');
+        });
+    } else {
+        res.end('<h1>Hello guest</h1>');
+    }
+});
+
 app.get('/form', (req, res) => {
     if (!req.session.userId) {
         res.redirect('/');
