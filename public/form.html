@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drobné Stavby - Formulář</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🏗️ Drobná Stavba</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="btn btn-outline">Zpět na hlavní stránku</a>
+                <button id="logoutBtn" class="btn btn-outline">Odhlásit se</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Nová objednávka</h2>
+            <p>Vyplňte prosím všechny údaje pro vytvoření nové objednávky.</p>
+
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <label for="textField">Popis práce *</label>
+                    <textarea id="textField" name="textField" rows="4" placeholder="Popište, jakou práci potřebujete..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="selectValue">Typ práce *</label>
+                    <select id="selectValue" name="selectValue" required>
+                        <option value="">Vyberte typ práce</option>
+                        <option value="rekonstrukce">Rekonstrukce</option>
+                        <option value="oprava">Oprava</option>
+                        <option value="novostavba">Novostavba</option>
+                        <option value="renovace">Renovace</option>
+                        <option value="jiné">Jiné</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Telefonní číslo *</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+420 123 456 789" required>
+                    <small class="form-help">Zadejte telefonní číslo ve formátu +420 123 456 789</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="checkboxValue" name="checkboxValue">
+                        <span class="checkmark"></span>
+                        Souhlasím s podmínkami a chci být kontaktován
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Vyberte umístění na mapě *</label>
+                    <div id="map" class="map-container"></div>
+                    <small class="form-help">Klikněte na mapu pro výběr umístění</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-large" disabled>
+                        Odeslat objednávku
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Objednávka byla úspěšně odeslána!</h2>
+            <div id="orderDetails" class="order-details"></div>
+            <div class="modal-actions">
+                <button id="backToHomeBtn" class="btn btn-primary">Zpět na hlavní stránku</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>

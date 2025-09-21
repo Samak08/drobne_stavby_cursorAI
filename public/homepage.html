@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drobné Stavby - Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>🏗️ Drobná Stavba</h1>
+            </div>
+            <div class="nav-links">
+                <div id="auth-buttons" class="auth-section">
+                    <button id="loginBtn" class="btn btn-outline">Přihlásit se</button>
+                    <button id="registerBtn" class="btn btn-primary">Registrovat</button>
+                </div>
+                <div id="user-section" class="user-section" style="display: none;">
+                    <span id="welcome-text"></span>
+                    <button id="logoutBtn" class="btn btn-outline">Odhlásit se</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Vítejte u Drobných Staveb</h2>
+            <p>Profesionální služby pro drobné stavební práce. Naše firma se specializuje na kvalitní a spolehlivé řešení vašich stavebních potřeb.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🏠 Rekonstrukce</h3>
+                    <p>Kompletní rekonstrukce domů a bytů</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 Opravy</h3>
+                    <p>Rychlé a kvalitní opravy všech typů</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Rychlost</h3>
+                    <p>Rychlé a efektivní řešení vašich potřeb</p>
+                </div>
+            </div>
+
+            <div id="order-section" style="display: none;">
+                <h3>Vaše objednávky</h3>
+                <div id="orders-list" class="orders-list"></div>
+                <button id="new-order-btn" class="btn btn-primary btn-large">Nová objednávka</button>
+            </div>
+
+            <div id="login-prompt" class="login-prompt">
+                <p>Pro vytvoření objednávky se prosím přihlaste nebo zaregistrujte.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Přihlášení</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Uživatelské jméno:</label>
+                    <input type="text" id="loginUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Heslo:</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registrace</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">Uživatelské jméno:</label>
+                    <input type="text" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Heslo:</label>
+                    <input type="password" id="registerPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrovat</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="homepage.js"></script>
+</body>
+</html>
