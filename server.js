@@ -167,9 +167,9 @@ app.post('/api/submit-form', (req, res) => {
         return res.status(400).json({ error: 'All required fields must be filled' });
     }
 
-    // Phone number validation (basic format check)
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    if (!phoneRegex.test(phoneNumber.replace(/[\s\-\(\)]/g, ''))) {
+    // Phone number validation (flexible format check)
+    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{8,20}$/;
+    if (!phoneRegex.test(phoneNumber)) {
         return res.status(400).json({ error: 'Invalid phone number format' });
     }
 

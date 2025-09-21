@@ -1,4 +1,4 @@
-# Drobná Stavba - Construction Website
+# Drobné stavby - Construction Website
 
 A modern web application for small construction projects with user authentication, order management, and interactive forms.
 

@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validatePhoneNumber() {
         const phone = phoneNumber.value.trim();
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-        const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+        // More flexible phone regex that accepts various formats
+        const phoneRegex = /^[\+]?[0-9\s\-\(\)]{8,20}$/;
         
-        if (phone && !phoneRegex.test(cleanPhone)) {
+        if (phone && !phoneRegex.test(phone)) {
             phoneNumber.style.borderColor = '#e74c3c';
             showFieldError(phoneNumber, 'Neplatný formát telefonního čísla');
         } else {
@@ -91,9 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validatePhoneFormat(phone) {
         if (!phone.trim()) return false;
-        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-        const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
-        return phoneRegex.test(cleanPhone);
+        const phoneRegex = /^[\+]?[0-9\s\-\(\)]{8,20}$/;
+        return phoneRegex.test(phone);
     }
 
     async function handleSubmit(e) {
