@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drobné Stavby - Formulář</title>
+    <title>Drobné Stavby - Formulár</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,58 +18,58 @@
                 <h1>Drobné stavby</h1>
             </div>
             <div class="nav-links">
-                <a href="/" class="btn btn-outline">Zpět na hlavní stránku</a>
-                <button id="logoutBtn" class="btn btn-outline">Odhlásit se</button>
+                <a href="/" class="btn btn-outline">Späť na hlavnú stránku</a>
+                <button id="logoutBtn" class="btn btn-outline">Odhlásiť sa</button>
             </div>
         </nav>
     </header>
 
     <main class="container">
         <section class="form-section">
-            <h2>Nová objednávka</h2>
-            <p>Vyplňte prosím všechny údaje pro vytvoření nové objednávky.</p>
+            <h2>Nová objednávka dokumentov</h2>
+            <p>Vyplňte prosím všetky údaje pre vytvorenie novej objednávky dokumentov.</p>
 
             <form id="orderForm" class="order-form">
                 <div class="form-group">
-                    <label for="textField">Popis práce *</label>
-                    <textarea id="textField" name="textField" rows="4" placeholder="Popište, jakou práci potřebujete..." required></textarea>
+                    <label for="textField">Popis stavby *</label>
+                    <textarea id="textField" name="textField" rows="4" placeholder="Popíšte, akú stavbu potrebujete schváliť..." required></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="selectValue">Typ práce *</label>
+                    <label for="selectValue">Typ stavby *</label>
                     <select id="selectValue" name="selectValue" required>
-                        <option value="">Vyberte typ práce</option>
-                        <option value="rekonstrukce">Rekonstrukce</option>
+                        <option value="">Vyberte typ stavby</option>
+                        <option value="rekonstrukcia">Rekonštrukcia</option>
                         <option value="oprava">Oprava</option>
                         <option value="novostavba">Novostavba</option>
-                        <option value="renovace">Renovace</option>
-                        <option value="jiné">Jiné</option>
+                        <option value="renovácia">Renovácia</option>
+                        <option value="iné">Iné</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="phoneNumber">Telefonní číslo *</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+420 123 456 789" required>
-                    <small class="form-help">Zadejte telefonní číslo ve formátu +420 123 456 789</small>
+                    <label for="phoneNumber">Telefónne číslo *</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+421 123 456 789" required>
+                    <small class="form-help">Zadajte telefónne číslo vo formáte +421 123 456 789</small>
                 </div>
 
                 <div class="form-group">
                     <label class="checkbox-label">
                         <input type="checkbox" id="checkboxValue" name="checkboxValue">
                         <span class="checkmark"></span>
-                        Souhlasím s podmínkami a chci být kontaktován
+                        Súhlasím s podmienkami a chcem byť kontaktovaný
                     </label>
                 </div>
 
                 <div class="form-group">
-                    <label>Vyberte umístění na mapě *</label>
+                    <label>Vyberte umiestnenie na mape *</label>
                     <div id="map" class="map-container"></div>
-                    <small class="form-help">Klikněte na mapu pro výběr umístění</small>
+                    <small class="form-help">Kliknite na mapu pre výber umiestnenia</small>
                 </div>
 
                 <div class="form-actions">
                     <button type="submit" id="submitBtn" class="btn btn-primary btn-large" disabled>
-                        Odeslat objednávku
+                        Odoslať objednávku
                     </button>
                 </div>
             </form>
@@ -79,10 +79,10 @@
     <!-- Confirmation Modal -->
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
-            <h2>Objednávka byla úspěšně odeslána!</h2>
+            <h2>Objednávka bola úspešne odoslaná!</h2>
             <div id="orderDetails" class="order-details"></div>
             <div class="modal-actions">
-                <button id="backToHomeBtn" class="btn btn-primary">Zpět na hlavní stránku</button>
+                <button id="backToHomeBtn" class="btn btn-primary">Späť na hlavnú stránku</button>
             </div>
         </div>
     </div>
